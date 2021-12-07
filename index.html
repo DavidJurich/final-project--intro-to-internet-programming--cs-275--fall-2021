@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carousel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
 </head>
 <body>
-    
+    <div class="main">
+        <button onclick="last()">
+            <span class="material-icons" style="font-size: 20px;">
+                arrow_back
+            </span>
+        </button>
+
+        <div class="container">
+            <div class="slide a" id="slide-1"> Slide One</div>
+            <div class="slide aa" id="slide-2"> Slide Two</div>
+            <div class="slide aaa" id="slide-3"> Slide Three</div>
+        </div>
+        <button onclick="next()">
+            <span class="material-icons" style="font-size: 20px;">
+                arrow_forward
+            </span>
+        </button>
+    </div>
+<script src="js/app.js" defer></script>
 </body>
 </html>
