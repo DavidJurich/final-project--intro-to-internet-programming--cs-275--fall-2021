@@ -1,5 +1,3 @@
-const imagemin = require("gulp-imagemin");
-
 const { src, dest, series, watch } = require(`gulp`),
     gulp = require(`gulp`),
     del = require(`del`),
@@ -7,7 +5,7 @@ const { src, dest, series, watch } = require(`gulp`),
     htmlCompressor = require(`gulp-htmlmin`),
     htmlValidator = require(`gulp-html`),
     cssCompressor = require(`gulp-uglifycss`),
-    imageMinifier = require(`gulp-imagemin`),
+    imageMin = require(`gulp-imagemin`),
     jsLinter = require(`gulp-eslint`),
     cssLinter = require(`gulp-stylelint`),
     jsCompressor = require(`gulp-uglify`),
@@ -78,15 +76,15 @@ let transpileJSForProd = () => {
 };
 
 let minifyImage = () => {
-    return src(`dev/img/*`)
-        .pipe(imageMinifier({
-            optipng: ['-i 1', '-strip all', '-fix', '-o7', '-force'],
-            pngquant: ['--speed=1', '--force', 256],
-            zopflipng: ['-y', '--lossy_8bit', '--lossy_transparent'],
-            jpegRecompress: ['--strip', '--quality', 'medium', '--min', 40, '--max', 80],
-            mozjpeg: ['-optimize', '-progressive'],
-            gifsicle: ['--optimize'],
-            svgo: ['--enable', 'cleanupIDs', '--disable', 'convertColors'],
+    return src([`img/*.png, img/*.svg`, `img/*`])
+        .pipe(imageMin({
+            optipng: [`-i 1`, `-strip all`, `-fix`, `-o7`, `-force`],
+            pngquant: [`--speed=1`, `--force`, 256],
+            zopflipng: [`-y`, `--lossy_8bit`, `--lossy_transparent`],
+            jpegRecompress: [`--strip`, `--quality`, `medium`, `--min`, 40, `--max`, 80],
+            mozjpeg: [`-optimize`, `-progressive`],
+            gifsicle: [`--optimize`],
+            svgo: [`--enable`, `cleanupIDs`, `--disable`, `convertColors`],
             quiet: false
         }))
         .pipe(dest(`prod/img`));
@@ -204,6 +202,6 @@ exports.build = series(
     compressHTML,
     compressCSS,
     transpileJSForProd,
-    imageMinifier
+    minifyImage
 );
 exports.clean = clean;
