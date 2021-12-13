@@ -9,6 +9,7 @@
 !gulpfile.js
 !package.json
 !package-lock.json
+!.babelrc
 
 !css/
 !img/
