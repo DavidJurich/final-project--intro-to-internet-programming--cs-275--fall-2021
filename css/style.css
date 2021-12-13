@@ -4,14 +4,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 
 .pics {
   float: left;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding: 15px 18px;
+  height: 250px;
+  width: 210px;
 }
 
 h1 {
@@ -26,69 +26,36 @@ h2 {
   color: black;
   line-height: 18px;
   padding-top: 5px;
-}
-
-p {
-  font-size: 16px;
-  color: black;
-  padding-right: 30px;
-  line-height: 18px;
-  overflow: hidden;
+  height: 24px;
 }
 
 .carousel {
-  /* display: flex; */
-  flex-direction: row;
+  background: #f2f2f2;
+  width: 700px;
+  height: 300px;
+  overflow: hidden;
 }
 
 .slide-container {
   display: flex;
-  flex-direction: row;
   overflow: hidden;
   background: #f2f2f2;
-  width: 500px;
-  margin: 0 0% 0%;
-}
-
-.left-arrow, .right-arrow {
-  height: 60px;
-  width: 60px;
-  display: flex;
+  width: fit-content;
+  margin: 10px;
 }
 
 button {
-  /* display: flex; */
-  align-content: center;
-  white-space: none;
   height: 60px;
   width: 60px;
-  padding: 0;
-  margin: 0;
 }
 
 .slide {
-  width: 500px;
-  white-space: nowrap;
+  width: 700px;
+  height: 400px;
   display: flex;
-  flex-direction: row;
-  position: relative;
-  left: 0;
-  transition: left 1s;
 }
 
 p {
-  display: flex;
-  /* flex-direction: column; */
-  /* width: 290px; */
-  /* margin: 0; */
-  padding-right: 15px;
-}
-
-/* button {
-  height: 50px; */
-  /* margin: 100px 0% 0%;
-} */
-
-.hidden {
-  visibility: hidden;
+  height: 400px;
+  margin-right: 40px;
 }

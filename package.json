@@ -14,9 +14,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2021/issues"
+    "url": "https://github.com/code-warrior/final-project--intro-to-internet-programming--cs-275--fall-2021"
   },
-  "homepage": "https://github.com/code-warrior/assignment-3--intro-to-internet-programming--cs-275--fall-2021#readme",
+  "homepage": "https://github.com/code-warrior/final-project--intro-to-internet-programming--cs-275--fall-2021#readme",
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
